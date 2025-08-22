@@ -1,0 +1,6 @@
+,Person1,Person2,Person3,Person4,VIP
+Person1,0,0,1,0,1
+Person2,0,0,0,1,0
+Person3,1,0,0,0,1
+Person4,0,1,0,0,0
+VIP,1,0,1,0,0

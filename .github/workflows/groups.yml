@@ -1,0 +1,48 @@
+name: run groups.py
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Group Sizes'
+        required: true
+        default: '2'
+        type: choice
+        options:
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+      
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
+      - name: install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas
+          pip install numpy
+      - name: run groups.py
+        run: python ./pairing/rnd_groups.py
+        env:
+          LOG_LEVEL: ${{ github.event.inputs.logLevel }}
+      - name: commit, push and create pr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "New groups for the day"
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          branch: "groups"
+          title: "New groups for the day"
+          branch-suffix: timestamp
+          base: "main"
+          body: "Automated creation of groups for the day"
