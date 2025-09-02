@@ -1,6 +1,6 @@
 # Day 06, 01.09.2025
 <span style="color:grey">
-How to do a Daily Protocol
+Daily Routine
 </span>
 
 ---
@@ -37,21 +37,36 @@ This is where you take notes on your content. In the following content blocks, y
 
 <span style="color:grey">
 
-1) click on green button "<> Code"
+1) Click on green button "<> Code"
 2) Select SSH
-3) copy the link
-
-4) open terminal(vscode, gitbash) depending on operating system
-
-5) navigate to Documents or spiced folder
-
-5) windows user, please check that you're not in google Drive folder
-
-6) execute:
-git clone <copied_link>
+3) Copy the link
+4) Open terminal(vscode, gitbash) depending on operating system
+5) Navigate to Documents or spiced folder
+6) Windows user, please check that you're not in google Drive folder
+7) execute: git clone <copied_SSH_link>
 </span>
 ---
+## <span style="color:black"> __Exercise Preparation__ </span>
 
+<span style="color:grey">
+
+1) Create of fork of the repo to separate the study environment from the original source (fork-> create create a new fork -> fill owner & repository name)
+2) Assign your colloborator, if there is any (settings -> collaborator addition) 
+3) Cope SSH link to share with your collaborator, if he/she does not receive regarding email
+4) Clone the SSH key of fork for your own local cloning
+5) Open terminal(vscode, gitbash) depending on operating system
+6) Navigate to Documents or spiced folder
+7) Windows user, please check that you're not in google Drive folder
+8) Execute: git clone <copied_SSH_link>
+9) Check if there is any requirements for the exercise
+10) If there is: Enter the form environment in terminal as admin
+11) Execute: pyenw local 3.11.3
+12) Execute: python -m venv .venv
+13) Execute: source .venv/Scripts/activate(in Windows-git bash)
+14) pip install -r requirements.txt
+
+</span>
+---
 ## <span style="color:black"> __Links, Quotes, Pictures and GIFs__ </span>
 
 * you can use links in your notes by using this formatting:  
