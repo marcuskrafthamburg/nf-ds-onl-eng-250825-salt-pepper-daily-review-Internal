@@ -1,4 +1,4 @@
-# Day 01, 03.09.1986
+# Day 08, 03.09.2025
 
 The day was divided into 2 parts: the career Training in the morning and Python functions lesson in the afternoon.
 
@@ -24,35 +24,82 @@ The day was divided into 2 parts: the career Training in the morning and Python 
 ---
 ## __Career Training Notes__ 
 
-* Define goal for the next 2 hours
-* Take one of the 9 targets like LinkedIn Profile, Transferable Skill Awareness, Target Role Clarity, Update CV etc.
+* The career training is time for the students to work on their CV, prepare for interviews and figure out some job searching strategies 
+* coach Renate recommends to define a smart goal for the next 2 hours
+* Take one of the 9 targets on the wheel of readiness like LinkedIn Profile, Transferable Skill Awareness, Target Role Clarity, Update CV etc.
 * At career compass you can’t skip modules
 
 ---
 
 ## __Python lesson notes__
+### __Organisation__
 
-* Structure of the day was mentioned
 * W3 School was again mentioned as learning platform, link is in the discord
-* Cohorts were merged so that the students are better able to support each other and networking reasons
+* [Python tutorial on W3](https://www.w3schools.com/python/) 
+* Cohorts were merged so that the students are better able to support each other and for networking reasons
+* Questions can always be asked in the ‚ask-the-coaches‘ discord channel so everybody can see and answer the question
+*  or can be discussed during the daily review
+
+### __Python list comprehension and functions__
 * List comprehension:
     * Comprehension = Compress loop statements
-    * Showing example for even numbers
+    * for example we can reduce this statement
+    ```
+    list_were_building = []
+    for thing in iterable:
+        list_were_building.append(transform(thing))
+    ```
+    to this statement
+    ```
+    list_were_building = [transform(thing) for thing in iterable]
+    ```
+    * can be also applied to dictionaries and tuples
+
+
 * Functions
+
     * Declare order of instructions
     * Functions are Reusable
-    * Explaining the get_evens function example
-    * Functions can have default values or can be called with arguments
-    * There are positional arguments and keyword arguments (can be mixed, but default values always at last positions)
     * More flexible code
     * Reduces number of lines of code
-* Questions can always be asked in the ‚ask-the-coaches‘ discord channel so everybody can see and answer the question
-* During daily review
-* Do the python course on W3
+    * basic construction:
+    ```
+    def my_func():
+        pass # This pass just acts as a filler right now.
+    ```
+    * starts with the 'def' keyword, followed by a space and the name of the function
+    * in parenthesis you can add arguments
+    * don't forget the colon at the end
+    * in the next line indent the block of code that defines the body of the function
+    * Explaining the get_evens function example:
+    ```
+    def get_evens(): 
+        evens = []
+        for element in range(10): 
+            if element % 2 == 0: 
+                evens.append(element)                
+    ```
+    * Functions can have default values or can be called with arguments
+    ```
+    def get_multiples(n=5, divisor=2): 
+    ```
+
+    * There are positional arguments and keyword arguments (can be mixed, but default values always at last positions)
+    ```
+    positional arguments
+    get_multiples(5, 2)
+
+    keyword arguments
+    get_multiples(n=5, divisor=2)
+
+    correct mix
+    get_multiples(5, divisor=2)
+    ```
+
 
 ---
 
 ## __Helpful References__
-* [Python tutorial on W3](https://www.w3schools.com/python/) 
+* [Python tutorial on functions](https://www.w3schools.com/python/python_functions.asp) 
 
 
