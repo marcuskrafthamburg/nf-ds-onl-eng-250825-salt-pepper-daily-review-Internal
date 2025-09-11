@@ -254,7 +254,6 @@ Expected output:
 <span style="color:grey">
 
 - Always check **table structure and data types** before writing queries.
-
 - Using aliases (`AS`) improves code readability.  
 - Build queries **step by step** to make debugging easier.
 - Group division helped students focus more on each topic  
