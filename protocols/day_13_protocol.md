@@ -13,13 +13,25 @@ Daily Routine
 ## __Schedule__
 <span style="color:grey">
 
-|Time|Content|
-|---|---|
+|-----Time----|Content|
+|-------------|-------|
 |09:00 - 10:00|Daily Review|
 |10:00 - 12:30|Group project on Python and SQL|
 |12:30 - 13:30|Lunch Break| 
-|13:30 - 17:00|Group project on Python and SQL|
+|13:30 - -----|Group project on Python and SQL|
 
+
+</span>
+
+##  __Objective__
+
+<span style="color:grey">
+
+- Review and reinforce previous concepts during the Review session  
+- Progress in Python programming skills and complete Python Notebooks  
+- Practice and enhance SQL skills through games and advanced challenges  
+- Learn teamwork and collaboration in solving practical tasks  
+- Gain familiarity with Advanced SQL and DBT to develop analytical and practical data skills
 
 </span>
 
@@ -53,18 +65,6 @@ Daily Routine
     <p>Dataset</p>
     </div>
     </div>
-
-</span>
-
-##  __Objective__
-
-<span style="color:grey">
-
-- Review and reinforce previous concepts during the Review session  
-- Progress in Python programming skills and complete Python Notebooks  
-- Practice and enhance SQL skills through games and advanced challenges  
-- Learn teamwork and collaboration in solving practical tasks  
-- Gain familiarity with Advanced SQL and DBT to develop analytical and practical data skills
 
 </span>
 
@@ -249,6 +249,7 @@ Expected output:
 
 ![expected output cities with most pets](../images/1.10_cities_most_pets.png)
 
+
 ## __Notes__
 
 <span style="color:grey">
@@ -259,4 +260,9 @@ Expected output:
 - Group division helped students focus more on each topic  
 - Pairing and group work facilitated faster and better problem solving
 </span>
+
+## __Helpful References__
+
+* [PostgreSQL Tutorial](https://neon.com/postgresql/tutorial)
+* [PostgreSQL 18rc1 Documentation](https://www.postgresql.org/docs/18/index.html)
 
