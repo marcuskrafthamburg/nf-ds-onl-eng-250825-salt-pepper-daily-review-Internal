@@ -1,12 +1,12 @@
 # Day 17 — 16.09.2025
 ## Basic Overview
-* [EDA Project](#EDA_Project)
-    * [General](#General)
-    * [Data Retrieval](#Data_Retrieval)
-    * [Data Preparation](#Data_Preparation)
-    * [Data Analysis](#Data_Analysis)
-    * [Result Presentation](#Result_Presentation)
-* [Helpful References](#Helpful_References)
+* [EDA Project](#eda-project)
+    * [General](#general)
+    * [Data Retrieval](#data-retrieval)
+    * [Data Preparation](#data-preparation)
+    * [Data Analysis](#data-analysis)
+    * [Result Presentation](#result-presentation)
+* [Helpful References](#helpful-references)
 ## Schedule
  Time        | Content                                         
  ----------- | ----------------------------------------------- 
