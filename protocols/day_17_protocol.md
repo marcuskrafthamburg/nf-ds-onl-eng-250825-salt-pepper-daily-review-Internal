@@ -166,10 +166,10 @@ Focus:
 ### Charts
 * Less is more
 * Keep charts as simple as possible and as complex as required
-* If you use colors be intentional
-* Define / use a color theme and stick to it
+* If you use colours be intentional
+* Define a colour palett and stick to it
 * Use axis according to data type (categorical vs numerical)
-* Don't truncate axis
+* Don't mislead the audience  (e.g. by truncating axis)
 
 
 #  References
