@@ -1,6 +1,46 @@
 # Day 16 — 15.09.2025
 ---
 > **Disclaimer:** Claude AI was used to format the raw classroom notes to a polished format.
+- [Day 16 — 15.09.2025](#day-16--15092025)
+  - [__Basic Overview__](#basic-overview)
+  - [__Schedule__](#schedule)
+  - [| 16:30–End   | Exercise Time                                   |](#-1630end----exercise-time-----------------------------------)
+- [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+  - [What is EDA?](#what-is-eda)
+  - [The EDA Process](#the-eda-process)
+    - [1. Ask Research Questions as Hypotheses](#1-ask-research-questions-as-hypotheses)
+    - [2. Talk to Domain Experts](#2-talk-to-domain-experts)
+    - [3. Evaluate your Hypotheses Based on the Gathered Input](#3-evaluate-your-hypotheses-based-on-the-gathered-input)
+  - [Types of EDA](#types-of-eda)
+    - [By Variables](#by-variables)
+    - [By Method](#by-method)
+    - [By Data Type](#by-data-type)
+  - [Key Statistical Measures](#key-statistical-measures)
+    - [Central Tendency](#central-tendency)
+    - [Spread/Dispersion](#spreaddispersion)
+    - [Distribution Shape](#distribution-shape)
+  - [Data Types \& Examples](#data-types--examples)
+    - [Numerical Data](#numerical-data)
+    - [Categorical Data](#categorical-data)
+  - [Visualization Tools](#visualization-tools)
+    - [Univariate](#univariate)
+    - [Multivariate](#multivariate)
+  - [Correlation Analysis](#correlation-analysis)
+    - [Pearson's r](#pearsons-r)
+    - [Spearman's ρ (rho)](#spearmans-ρ-rho)
+    - [Important Warnings](#important-warnings)
+  - [Practical Guidelines](#practical-guidelines)
+    - [Histogram Bin Selection](#histogram-bin-selection)
+    - [Outlier Detection](#outlier-detection)
+    - [For Categorical Data](#for-categorical-data)
+  - [Common Data Distributions](#common-data-distributions)
+  - [EDA Workflow Summary](#eda-workflow-summary)
+  - [Key Takeaways](#key-takeaways)
+    - [Useful Resources](#useful-resources)
+- [__Exercise Summary__](#exercise-summary)
+  - [Groups of the Day](#groups-of-the-day)
+  - [Data Cleaning: Step-by-Step](#data-cleaning-step-by-step)
+  - [Useful links for the Exercises:](#useful-links-for-the-exercises)
 
 ## __Basic Overview__
 - What is Exploratory Data Analysis (EDA)?  
@@ -41,6 +81,11 @@
 *"The hardest thing is to find a black cat in a dark room, especially if there is no cat"*
 - Become a domain expert or consult one
 - Essential questions: What do you want to find? Who are your customers? Why do you need analysis?
+
+### 3. Evaluate your Hypotheses Based on the Gathered Input
+- Are your Hypotheses right?
+- Do you need to refine your Hypotheses?
+- iterate.
 
 ## Types of EDA
 
