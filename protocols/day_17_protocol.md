@@ -34,14 +34,14 @@ __Group Selection:__
 __Project Target:__
 * Do all necessary steps to generate insights for __*your*__ client
 * Document your work in a Jupyter notebook
-* Present your results as slides focussing on your client
+* Present your results **about** your client **to** an audience of mixed group of company internal stakeholders
 
 __Project Schedule:__
  Day |  Task
  -|-
  Tuesday |Introduction to project / initial data exploration / hypothesis definition
  Wednesday | pair work on project / at 1pm: daily review 
- Thursday | pair work on project
+ Thursday | pair work on project / 10am: check-in with attendance picture
  Friday | pair work on project / at 1pm: result presentation
  
 
@@ -155,7 +155,7 @@ Focus:
 
 
 ### Style
-* Adapt the presentation to your audience (client).
+* Adapt the presentation to your audience (mixed group of company internal stakeholders)
 * Keep it simple, stupid! (KISS principle)
 * Be concise and accurate, no extra information if not needed
 * Join explanation blocks with “whys” and “hows”
@@ -167,7 +167,7 @@ Focus:
 * Less is more
 * Keep charts as simple as possible and as complex as required
 * If you use colours be intentional
-* Define a colour palett and stick to it
+* Define a colour palette and stick to it
 * Use axis according to data type (categorical vs numerical)
 * Don't mislead the audience  (e.g. by truncating axis)
 
@@ -177,5 +177,5 @@ Focus:
     * https://ideal-adventure-6vymekm.pages.github.io/sessions/07.2_EDA_process.html
 * KISS principle:
     * https://en.wikipedia.org/wiki/KISS_principle
-* Colour paletts defined in visualisation library "bokeh"
+* Colour palettes defined in visualisation library "bokeh"
     * https://docs.bokeh.org/en/latest/docs/reference/palettes.html
