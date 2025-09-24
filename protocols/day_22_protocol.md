@@ -41,16 +41,10 @@ Goals <span style="color:grey"> (Why do we need this?)</span>:
   <a href="https://ideal-adventure-6vymekm.pages.github.io/_images/6ebd10e7ee7ec8605f50720098e185e572eeb40bfceff8adeea66193e5ec2073.png" target="_blank">Source: Salt&Pepper Cookbook</a>
 </p>
 
-<div style="display: flex; gap: 16px; align-items: flex-start;">
-  <div style="border: 1px solid; padding: 12px; border-radius: 6px;">
-    <strong>General equation:</strong><br>
-  </div>
-
-  <div style="border: 1px solid; padding: 12px; border-radius: 6px;">
-    <strong>Key terms:</strong><br>
-  </div>
-</div>
     
+| General Equation     | Key Terms |
+|----------------------|-----------|
+| y = b₀ + b₁x + e <br> <br> &rarr; find b₀ and b₁! | Intercept (b₀, value of y when x = 0) <br> Slope (b₁, weights/coefficients) <br> Residuals (e, difference in estimated vs. true value: eᵢ = yᵢ - ŷᵢ) |
 
 
 
@@ -60,7 +54,19 @@ Goals <span style="color:grey"> (Why do we need this?)</span>:
   <a href="https://www.reneshbedre.com/blog/learn-to-calculate-residuals-regression.html" target="_blank">Source: RS Blog</a>
 </p>
 
+idea: finding the "line" (aka fit) that best describes the data
 
+how: looking at the sum of the residuals ("errors")
+less errors -> better fit
+residuals are squared and summed, so that negatve and positive values don't negate each other
+
+<img src="../images/lin_squ.gif" alt="A simple regression plot" width="500">
+
+<p style="font-size: 0.8em; margin-top: 4px;">
+  <a href="https://medium.datadriveninvestor.com/asap-guide-to-linear-regression-fda841656fbd" target="_blank">Source: ASAP Guide to Linear Regression</a>
+</p>
+
+mean squared error erklären
 
 Correlation — measures the strength of the relationship → a number
 
@@ -70,12 +76,12 @@ It's not just prediction.
 
 It's a form of retrospection: finding the best linear relationship that could have produced this data.
 
-${\displaystyle {\binom {n}{k}}={\frac {n(n-1)\dotsb (n-k+1)}{k(k-1)\dotsb 1}}=  {\frac {n!}{k!(n-k)!}}}$
+### Least squares criterion
+Sum of squared residuals: $\sum_{i=1}^n e_i^2$
 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-        <mi>y</mi>
-        <msub>
-        </math>
+$ b_1 = \frac{\Sigma(y_i - \bar{y})(x_i - \bar{x})}{\sum(x_{i} - \bar{x})^{2}} $
+
+### What counts as linear regression/equation?
 
 ✅ Linear regression (βs enter linearly):
 y = β0 + β1·x
@@ -96,8 +102,19 @@ is still linear regression: the βs enter linearly, even though the slope
 dy/dx = β1 + 2β2·x
 is not constant.
 
+## Assumptions
+1. **Linearity**: The target variable and the coefficients of the explanatory variables are linearly related.
+2. **Zero-Mean Error**: The mean of all residuals is zero.
+3. **Strict Exogeneity**: All the explanatory variables are uncorrelated with the residual.
+4. **Homoscedasticity**: The variance of the residuals across a single observation remains the same.
+5. **No Multicollinearity**: All the explanatory variables are linearly independent.
+
+## Multiple Linear Regression
+
+blabla
+
 ---
-## __Markdown Formatting__ 
+## __Exercise: Implementation in sklearn & the other__ 
 
 * you make a heading with \#, one for a level one heading, which is the largest - you can go down to level 6
 * starting a new line: use a double space
