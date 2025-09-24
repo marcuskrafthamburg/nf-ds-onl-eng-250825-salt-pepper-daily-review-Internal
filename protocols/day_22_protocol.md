@@ -1,13 +1,10 @@
 # Day 22, 22.09.2025
 
-Linear Regression
 
-
----
 ##  __Basic Overview__
  
 
-*  linear regression theoretical intro
+*  [Linear Regression: theory](#linear-regression)
 *  implementation in pandas
 *  first model training
 
@@ -16,14 +13,147 @@ Linear Regression
 
 |Time|Content|
 |---|---|
-|10:00 - 11:30|First theoretical inputs|
-|11:30 - 12:30|Other theoretical inputs|
-|12:30 - 13:30|Lunch Break| 
-|13:30 - 15:00|Practical exercises|
-|15:00 - 17:00|Exercises and Ending|
+|10:00 - 11:15|Lecture on Linear Regression|
+|11:15 - 11:30|Reflection on lecture|
+|11:30 - 13:00|Lunch Break| 
+|13:00 - 18:30 <br> (or whenever finished) |Self-study/Pair-Programming: <br>Practical exercises|
 
 ---
-##  __First Content Notes__ 
+## __Linear Regression__ 
+Goals <span style="color:grey"> (Why do we need this?)</span>:
+
+* explanation <span style="color:grey"> (Why is my house worth xyz?)</span> &rarr; descriptive statistics
+* prediction <span style="color:grey"> (How much is my house worth?)</span> &rarr; inferential statistics
+
+### Regression: 
+
+* *regredi* (Latin) = to go back
+* "going back" from a cloud of data points to find the underlying relationship
+
+### Linear Regression:
+
+* assuming two (or more) variables have a certain kind of relationship - **linear**
+* using this assumption to find the equation that best describes this relationship
+
+<img src="lin_reg.png" alt="A simple regression plot" width="500">
+
+<p style="font-size: 0.8em; margin-top: 4px;">
+  <a href="https://ideal-adventure-6vymekm.pages.github.io/_images/6ebd10e7ee7ec8605f50720098e185e572eeb40bfceff8adeea66193e5ec2073.png" target="_blank">Source: Salt&Pepper Cookbook</a>
+</p>
+
+
+
+
+<div style="display: flex; gap: 16px; align-items: flex-start;">
+  <div style="border: 1px solid; padding: 12px; border-radius: 6px;">
+    <strong>General equation:</strong><br>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>y</mi>
+        <mo>=</mo>
+        <msub>
+            <mi>b</mi>
+            <mrow data-mjx-texclass="ORD">
+            <mn>0</mn>
+            </mrow>
+        </msub>
+        <mo>+</mo>
+        <msub>
+            <mi>b</mi>
+            <mrow data-mjx-texclass="ORD">
+            <mn>1</mn>
+            </mrow>
+        </msub>
+        <mo>&#x22C5;</mo>
+        <mi>x</mi>
+        <mo>+</mo>
+        <mi>e</mi>
+        </math><br><br>
+        → Find <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+            <mi>b</mi>
+            <mn>0</mn>
+        </msub>
+        </math>
+        and <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+            <mi>b</mi>
+            <mn>1</mn>
+        </msub>
+        </math>!
+  </div>
+
+  <div style="border: 1px solid; padding: 12px; border-radius: 6px;">
+    <strong>Key terms:</strong><br>
+Intercept (<math xmlns="http://www.w3.org/1998/Math/MathML"><msub>
+            <mi>b</mi>
+            <mrow data-mjx-texclass="ORD">
+            <mn>0</mn>
+            </mrow>
+        </msub> </math>, value of <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>y</mi>
+        <msub>
+        </math> when <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+            <mi>x</mi>
+        </msub>
+        <mo>=</mo>
+        <msub>
+            <mi>0</mi>
+        </msub>
+        </math>)<br>
+Slope (b1, weights)<br>
+Residuals (<math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+            <mi>e</mi>
+        </msub> </math>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <msub>
+            <mi>e</mi>
+            <mi>i</mi>
+        </msub>
+        <mo>=</mo>
+        <msub>
+            <mi>y</mi>
+            <mi>i</mi>
+        </msub>
+        <mo>&#x2212;</mo>
+        <msub>
+            <mrow data-mjx-texclass="ORD">
+            <mover>
+                <mi>y</mi>
+                <mo stretchy="false">^</mo>
+            </mover>
+            </mrow>
+            <mi>i</mi>
+        </msub>
+        </math>)
+  </div>
+</div>
+<br>
+
+<img src="./reg_front2.svg" alt="A simple regression plot" width="500">
+
+<p style="font-size: 0.8em; margin-top: 4px;">
+  <a href="https://ideal-adventure-6vymekm.pages.github.io/_images/6ebd10e7ee7ec8605f50720098e185e572eeb40bfceff8adeea66193e5ec2073.png" target="_blank">Source: Salt&Pepper Cookbook</a>
+</p>
+
+![Fish Gif](https://miro.medium.com/v2/resize:fit:640/format:webp/1*nhGPRU12caIw7NK5Rr3p-w.gif)
+
+
+![My Diagram](./images/reg_front3.jpg)
+
+Correlation — measures the strength of the relationship → a number
+
+Regression — quantifies the nature of the relationship → an equation
+
+It's not just prediction.
+
+It's a form of retrospection: finding the best linear relationship that could have produced this data.
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>y</mi>
+        <msub>
+        </math>
 
 ✅ Linear regression (βs enter linearly):
 y = β0 + β1·x
