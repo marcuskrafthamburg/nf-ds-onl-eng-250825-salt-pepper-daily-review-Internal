@@ -106,10 +106,25 @@ $y = b_0 + (b_1)²·x$ ($b$ squared → nonlinear in $b$)l
 5. **No Multicollinearity**: All the explanatory variables are linearly independent.
 
 ## Model Evaluation
+* Root Mean Squared Error<br>
+$RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2}$<br>
+reflects sum of squared residuals (MSE)<br>
+&rarr; low value = good fit
+
+
 Simple Linear Regression
 *  $R^2 = 1 - \frac{SSR}{SST}$<br>
 with $SSR =\sum_{i=1}^n e_i^2$ (sum of squared residuals)<br>
-and $SST =\sum_{i=1}^n (y_i - \bar{y})^2$ (total sum of squares)
+and $SST =\sum_{i=1}^n (y_i - \bar{y})^2$ (total sum of squares)<br>
+&rarr; value between 0 and 1 <br>
+&rarr; 1 = perfect prediction  
+
+Multiple Linear Regression
+* $R^2_{\text{adj}} = 1 - (1 - R^2) \frac{n - 1}{n - p - 1}$<br>
+$n$: number of observations<br>
+$p$ number of features<br>
+&rarr; penalizes adding non-useful explanatory variables
+
 
 
 ---
@@ -263,3 +278,6 @@ pd.get_dummies(df['cat_col'], drop_first=True)
 ##  __Helpful References__
 * [Pre-Preppers](https://docs.google.com/presentation/d/1a7cdrUL_-Reg-myKLcfaBgx_ReR2efUf/edit?slide=id.p1#slide=id.p1)
 * [Slides](https://ideal-adventure-6vymekm.pages.github.io/sessions/08_Linear_Regression.html#)
+* [GitHub exercises repo](https://github.com/neuefische/ds-linear-regression)
+* [Linear Regression explained by Statquest](https://www.youtube.com/watch?v=7ArmBVF2dCs)
+* [OLS Regression - interactive visual explanation](https://setosa.io/ev/ordinary-least-squares-regression/)
