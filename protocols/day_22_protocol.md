@@ -35,7 +35,7 @@ Goals <span style="color:grey"> (Why do we need this?)</span>:
 * assuming two (or more) variables have a certain kind of relationship - **linear**
 * using this assumption to find the equation that best describes this relationship
 
-<img src="images/lin_reg.png" alt="A simple regression plot" width="500">
+<img src="../images/lin_reg.png" alt="A simple regression plot" width="500">
 
 <p style="font-size: 0.8em; margin-top: 4px;">
   <a href="https://ideal-adventure-6vymekm.pages.github.io/_images/6ebd10e7ee7ec8605f50720098e185e572eeb40bfceff8adeea66193e5ec2073.png" target="_blank">Source: Salt&Pepper Cookbook</a>
@@ -131,7 +131,7 @@ Residuals (<math xmlns="http://www.w3.org/1998/Math/MathML">
 </div>
 <br>
 
-<img src="./reg_front2.svg" alt="A simple regression plot" width="500">
+<img src="../images/reg_front2.svg" alt="A simple regression plot" width="500">
 
 <p style="font-size: 0.8em; margin-top: 4px;">
   <a href="https://ideal-adventure-6vymekm.pages.github.io/_images/6ebd10e7ee7ec8605f50720098e185e572eeb40bfceff8adeea66193e5ec2073.png" target="_blank">Source: Salt&Pepper Cookbook</a>
