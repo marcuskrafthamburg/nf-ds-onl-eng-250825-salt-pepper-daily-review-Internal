@@ -35,7 +35,7 @@ Goals <span style="color:grey"> (Why do we need this?)</span>:
 * assuming two (or more) variables have a certain kind of relationship - **linear**
 * using this assumption to find the equation that best describes this relationship
 
-<img src="lin_reg.png" alt="A simple regression plot" width="500">
+<img src="images/lin_reg.png" alt="A simple regression plot" width="500">
 
 <p style="font-size: 0.8em; margin-top: 4px;">
   <a href="https://ideal-adventure-6vymekm.pages.github.io/_images/6ebd10e7ee7ec8605f50720098e185e572eeb40bfceff8adeea66193e5ec2073.png" target="_blank">Source: Salt&Pepper Cookbook</a>
@@ -140,7 +140,7 @@ Residuals (<math xmlns="http://www.w3.org/1998/Math/MathML">
 ![Fish Gif](https://miro.medium.com/v2/resize:fit:640/format:webp/1*nhGPRU12caIw7NK5Rr3p-w.gif)
 
 
-![My Diagram](./images/reg_front3.jpg)
+![My Diagram](images/reg_front3.jpg)
 
 Correlation — measures the strength of the relationship → a number
 
