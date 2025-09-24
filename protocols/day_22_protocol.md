@@ -79,7 +79,8 @@ It's a form of retrospection: finding the best linear relationship that could ha
 ### Least squares criterion
 Sum of squared residuals: $\sum_{i=1}^n e_i^2$
 
-$ b_1 = \frac{\Sigma(y_i - \bar{y})(x_i - \bar{x})}{\sum(x_{i} - \bar{x})^{2}} $
+$ b_1 = \frac{\sum (y_i - \bar{y})(x_i - \bar{x})}{\sum (x_i - \bar{x})^2} $
+
 
 ### What counts as linear regression/equation?
 
