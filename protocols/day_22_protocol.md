@@ -4,9 +4,10 @@
 ##  __Basic Overview__
  
 
-*  [Linear Regression: theory](#linear-regression)
-*  implementation in pandas
-*  first model training
+*  [Linear Regression: Theory](#linear-regression)
+*  [Implementation with scikit-learn](#implementation-in-sklearn)
+* Implementation with Statsmodels
+
 
 ---
 ##  __Schedule__
@@ -44,7 +45,7 @@ Goals <span style="color:grey"> (Why do we need this?)</span>:
     
 | General Equation     | Key Terms |
 |----------------------|-----------|
-| y = b₀ + b₁x + e <br> <br> &rarr; find b₀ and b₁! | Intercept (b₀, value of y when x = 0) <br> Slope (b₁, weights/coefficients) <br> Residuals (e, difference in estimated vs. true value: eᵢ = yᵢ - ŷᵢ) |
+| y = b₀ + b₁x + e <br> <br> &rarr; find b₀ and b₁! | Intercept (b₀, value of y when x = 0) <br> Slope (b₁, weights/coefficients) <br> Residuals (e, difference in true vs. estimated value: eᵢ = yᵢ - ŷᵢ) |
 
 
 
@@ -54,11 +55,12 @@ Goals <span style="color:grey"> (Why do we need this?)</span>:
   <a href="https://www.reneshbedre.com/blog/learn-to-calculate-residuals-regression.html" target="_blank">Source: RS Blog</a>
 </p>
 
-idea: finding the "line" (aka fit) that best describes the data
+💡idea: finding the "line" (aka fit) that best describes the data
 
-how: looking at the sum of the residuals ("errors")
-less errors -> better fit
-residuals are squared and summed, so that negatve and positive values don't negate each other
+❗how: looking at the sum of the residuals ("errors")<br>
+less errors &rarr; better fit
+
+### Least squares criterion
 
 <img src="../images/lin_squ.gif" alt="A simple regression plot" width="500">
 
@@ -66,42 +68,35 @@ residuals are squared and summed, so that negatve and positive values don't nega
   <a href="https://medium.datadriveninvestor.com/asap-guide-to-linear-regression-fda841656fbd" target="_blank">Source: ASAP Guide to Linear Regression</a>
 </p>
 
-mean squared error erklären
+* residuals are squared and summed, so that negative and positive values don't negate each other
 
-Correlation — measures the strength of the relationship → a number
+* Ordinary Least Squares Regression: analytically finds least squares estimate which give $b_0$ and $b_1$<br>
+ $\min J(b_0, b_1) = \sum (y_i - b_0 - b_1 x_i)^2 $
 
-Regression — quantifies the nature of the relationship → an equation
 
-It's not just prediction.
+## Multiple Linear Regression
+* same idea but with more explanatory variables (& coefficients)
+* $y = b_0 + b_1 x_1 + b_2 x_2 + \dots + b_k x_k + e$
+* each variable adds another dimension
+* visualisation difficult
+<img src="../images/lin_reg_mult.gif" alt="A simple regression plot" width="500">
 
-It's a form of retrospection: finding the best linear relationship that could have produced this data.
-
-### Least squares criterion
-Sum of squared residuals: $\sum_{i=1}^n e_i^2$
-
-$$ b_1 = \frac{\sum (y_i - \bar{y})(x_i - \bar{x})}{\sum (x_i - \bar{x})^2} $$
+<p style="font-size: 0.8em; margin-top: 4px;">
+  <a href="https://medium.com/@MerelyAI/visualizing-ordinary-least-squares-regression-in-3d-0ce4b7372fb8" target="_blank">Source: MerelyAI</a>, original plane = green, estimated plane = red
+</p>
 
 
 ### What counts as linear regression/equation?
+"linear" = linear in the coefficients ($b$)
 
-✅ Linear regression (βs enter linearly):
-y = β0 + β1·x
-y = β0 + β1·x + β2·x²
-y = β0 + β1·log(x)
+✅ Linear regression ($b$ enters linearly):<br>
+$y = b_0 + b_1·x$<br>
+$y = b_0 + b_1·x + b_2·x²$<br>
+$y = b_0 + b_1·log(x)$
 
-❌ Not linear regression (βs enter nonlinearly):
-y = β0 + x^β1        (β in exponent)
-y = β0 + (β1)²·x     (β squared → nonlinear in β)
-
-So: a quadratic curve in x can still be linear regression. 
-In linear regression, "linear" means linear in the coefficients (β).
-We treat all functions of x (like x, x², log(x), …) as fixed terms, and only the βs are the free parameters.
-
-So a model like
-y = β0 + β1·x + β2·x²
-is still linear regression: the βs enter linearly, even though the slope
-dy/dx = β1 + 2β2·x
-is not constant.
+❌ Not linear regression ($b$ enters nonlinearly):<br>
+$y = b_0 + x^{b_1}$ ($b$ in exponent)<br>
+$y = b_0 + (b_1)²·x$ ($b$ squared → nonlinear in $b$)l
 
 ## Assumptions
 1. **Linearity**: The target variable and the coefficients of the explanatory variables are linearly related.
@@ -110,145 +105,161 @@ is not constant.
 4. **Homoscedasticity**: The variance of the residuals across a single observation remains the same.
 5. **No Multicollinearity**: All the explanatory variables are linearly independent.
 
-## Multiple Linear Regression
-
-blabla
-
----
-## __Exercise: Implementation in sklearn & the other__ 
-
-* you make a heading with \#, one for a level one heading, which is the largest - you can go down to level 6
-* starting a new line: use a double space
-* use single asterisks or underscores to make words italic (\*words* makes *words*) 
-* use double asterisks or underscores to make words bold (\*\*this** makes **this**)
-* use both at the same time with three asterisks or hyphens (\_\_\_ x ___ makes ___x___)
-* you make a divider with three hyphens (---)
-* you can make unordered lists with an asterisk (*) and ordered list with any number, a period and a space: \1.  
-(__super useful__: it doesn't matter which number you choose, it will be displayed as 1,2, etc. )
-
----
-
-## __Links, Quotes, Pictures and GIFs__
-
-* you can use links in your notes by using this formatting:  
-[link text](link URL “title”) becomes [neue fische website](https://www.neuefische.de/ "neue fische website")
-* you can also use pictures in your notes by using this format:   
-![image text](image URL) becomes ![neue fische logo](https://www.neuefische.de/neuefische-gmbh-logo.svg)
-* block quotes: you can highlight a quote from someone by using an angle bracket (>), for example: 
-    > I think there is a world market for maybe five computers. - Thomas J. Watson Sr.
-* use GIFs with the same formatting as links and pictures, the URL you use must end with .gif and if it expires, your gif will not be seen anymore  
-example: 
-![Another Gif](https://www.crumplab.com/rstatsforpsych/imgs/regression_squares.gif)
-![Fish Gif](https://miro.medium.com/v2/resize:fit:640/format:webp/1*nhGPRU12caIw7NK5Rr3p-w.gif)
+## Model Evaluation
+Simple Linear Regression
+*  $R^2 = 1 - \frac{SSR}{SST}$<br>
+with $SSR =\sum_{i=1}^n e_i^2$ (sum of squared residuals)<br>
+and $SST =\sum_{i=1}^n (y_i - \bar{y})^2$ (total sum of squares)
 
 
 ---
-##  __Taking Good Notes__ 
+## __Exercises__ 
+## Implementation in sklearn
 
-* stick to one style, e.g. links are in italic, keywords are in bold, dividers inbetween topics, etc.  
-* don't vary your text style too much, keep it simple
-* use bold and italic words rarely so they stand out more
+```python
+# Packages needed 
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score
+from sklearn.metrics import PredictionErrorDisplay
+```
 
----
+### Simple Linear Regression
 
-##  __Code inside notes__ 
-You can insert blocks of code into your notes with Markdown by wrapping the code in backticks (\`)
-\`/from x import y\` becomes  
-`/from x import y`
+0. *Recommended:* get an idea of relationship(s) between variables by creating scatter plots first
+```python
+sns.pairplot(df) 
+# automatically plot pairwise scatter plots and histograms of all variables in a df
+```
+
+1. Prepare data for modeling by defining target and feature
+```python
+X = df[['feature_variable']]  # X needs to be 2-dimensional so we need double brackets here
+y = df['target_variable']
+
+```
+2. Instantiate the model and train it
+```python
+lin_reg = LinearRegression() # instantiate
+lin_reg.fit(X, y) # train
+```
+* Show intercept and slope/coefficient: 
+```python
+print(lin_reg.intercept_) # intercept
+print(lin_reg.coef_[0]) # first coefficient
+```
+* Plot data points with fitted regression line
+```python
+# Plotting our data points
+plt.scatter(X, y)
+# Adding the fitted regression line of our model
+plt.plot(X, X*slope +intercept, '-')
+
+# plt.title()
+# plt.ylabel()
+# plt.xlabel()
+```
+* Estimate model fit with $R^2$
+```python
+# Calculate the estimated value for each data point
+y_pred = lin_reg.predict(X)
+# Note: the input for predict() needs to be a dataframe
+# single values can be passed in this form: pd.DataFrame({'col_name': [value]})
+
+# Calculate the R-squared for our model
+print(r2_score(y, y_pred))
+```
+#### Limitations of Linear Regression
+* estimating the quality of the model in only one value (e.g. $R^2$) can lead to biased interpretation
+* if the errors follow certain patterns: indicates poor fit i.e. not all variance is captured in the model
+
+```python
+# plot residual plot with integrated sklearn function
+display = PredictionErrorDisplay(y_true=y, y_pred=y_hat)
+display.plot()
+```
+### Multiple Linear Regression
+0. *Recommended:* get an idea of relationships between variables by creating scatter plots first
+```python
+sns.pairplot(df) 
+# automatically plot pairwise scatter plots and histograms of all variables in a df
+```
+1. Prepare data for modeling by defining target and features
+```python
+X = df[['feature_variable1, feature_variable2']]  
+y = df['target_variable']
+
+```
+2. Instantiate the model and train it
+```python
+lin_reg = LinearRegression() # instantiate
+lin_reg.fit(X, y) # train
+```
+* Show intercept and slope/coefficient: *see above*
+* Predict new values:
+```python
+new_y = pd.DataFrame({'col1': [num], 'col2': [num]})
+y_prediction = lin_reg.predict(new_y)
+```
+* Estimate model fit with Adjusted $R^2$
+```python
+# Define function for calculating adjusted r-squared
+def adjusted_r_squared(r_squared, X):
+    adjusted_r2 = 1 - ((1 - r_squared) * (len(X) - 1) / (len(X) - X.shape[1] - 1))
+    return adjusted_r2 
+
+# Calculate adjusted r-squared to compare different models
+adj_r_sq = {}
+adj_r_sq['M1'] = adjusted_r_squared(r2_score(y, y_hat), X)
+adj_r_sq['M2'] = adjusted_r_squared(r2_score(y, y_hat2), X2)
+adj_r_sq['M3'] = adjusted_r_squared(r2_score(y, y_hat3), X3)
+print(adj_r_sq)
+```
+### Dealing with Categorical Variables
+* need to be transformed if used in regression models
+* how to find them in a df: visual identification via scatter plot or histogram:
+```python
+# e.g. using seaborns pairplot function
+sns.pairplot(df) 
+```
+* declare strings as categories:
+```python
+# string column to category
+cat_df = df['cat_col'].astype('category'
+
+```
+* label encoding:
+```python
+# converts strings into numerical labels
+cat_df.cat.codes
+# alternative:
+from sklearn.preprocessing import OrdinalEncoder
+ord_make = OrdinalEncoder()
+ord_make.fit_transform(df[['cat_col']])
+
+```
+
+* creating dummy variables:
+```python
+# using pandas .get_dummies()
+pd.get_dummies(df['cat_col'])
+# alternative
+from sklearn.preprocessing import LabelBinarizer
+lb = LabelBinarizer()
+dummies = lb.fit_transform(df['cat_col'])
+# needs to be converted back to a dataframe
+dum_df = pd.DataFrame(dummies,columns=lb.classes_)
+```
+* Dummy Variable Trap: avoid multicollinearity by dropping the first of the newly created dummy variable columns
+```python
+# set drop_first=True when creating dummies
+pd.get_dummies(df['cat_col'], drop_first=True)
+```
 
 ---
 ##  __Helpful References__
-* [pre-preppers](https://docs.google.com/presentation/d/1a7cdrUL_-Reg-myKLcfaBgx_ReR2efUf/edit?slide=id.p1#slide=id.p1)
+* [Pre-Preppers](https://docs.google.com/presentation/d/1a7cdrUL_-Reg-myKLcfaBgx_ReR2efUf/edit?slide=id.p1#slide=id.p1)
 * [Slides](https://ideal-adventure-6vymekm.pages.github.io/sessions/08_Linear_Regression.html#)
-* [Markdown Cheatsheet on Github](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
-* [Guide to Markdown for Documentation Writers](https://document360.com/blog/introductory-guide-to-markdown-for-documentation-writers/#p8)
-* [Markdown Crash Course by Traversy Media](https://www.youtube.com/watch?v=HUBNt18RFbo)
-* [Basic Markdown Introduction and Syntax by Mike Dane](https://www.youtube.com/watch?v=2JE66WFpaII)
-
-
-<div style="display: flex; gap: 16px; align-items: flex-start;">
-  <div style="border: 1px solid; padding: 12px; border-radius: 6px;">
-    <strong>General equation:</strong><br>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <mi>y</mi>
-        <mo>=</mo>
-        <msub>
-            <mi>b</mi>
-            <mrow data-mjx-texclass="ORD">
-            <mn>0</mn>
-            </mrow>
-        </msub>
-        <mo>+</mo>
-        <msub>
-            <mi>b</mi>
-            <mrow data-mjx-texclass="ORD">
-            <mn>1</mn>
-            </mrow>
-        </msub>
-        <mo>&#x22C5;</mo>
-        <mi>x</mi>
-        <mo>+</mo>
-        <mi>e</mi>
-        </math><br><br>
-        → Find <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <msub>
-            <mi>b</mi>
-            <mn>0</mn>
-        </msub>
-        </math>
-        and <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <msub>
-            <mi>b</mi>
-            <mn>1</mn>
-        </msub>
-        </math>!
-  </div>
-
-  <div style="border: 1px solid; padding: 12px; border-radius: 6px;">
-    <strong>Key terms:</strong><br>
-Intercept (<math xmlns="http://www.w3.org/1998/Math/MathML"><msub>
-            <mi>b</mi>
-            <mrow data-mjx-texclass="ORD">
-            <mn>0</mn>
-            </mrow>
-        </msub> </math>, value of <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <mi>y</mi>
-        <msub>
-        </math> when <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <msub>
-            <mi>x</mi>
-        </msub>
-        <mo>=</mo>
-        <msub>
-            <mi>0</mi>
-        </msub>
-        </math>)<br>
-Slope (b1, weights)<br>
-Residuals (<math xmlns="http://www.w3.org/1998/Math/MathML">
-        <msub>
-            <mi>e</mi>
-        </msub> </math>
-        <math xmlns="http://www.w3.org/1998/Math/MathML">
-        <msub>
-            <mi>e</mi>
-            <mi>i</mi>
-        </msub>
-        <mo>=</mo>
-        <msub>
-            <mi>y</mi>
-            <mi>i</mi>
-        </msub>
-        <mo>&#x2212;</mo>
-        <msub>
-            <mrow data-mjx-texclass="ORD">
-            <mover>
-                <mi>y</mi>
-                <mo stretchy="false">^</mo>
-            </mover>
-            </mrow>
-            <mi>i</mi>
-        </msub>
-        </math>)
-  </div>
-</div>
-<br>
