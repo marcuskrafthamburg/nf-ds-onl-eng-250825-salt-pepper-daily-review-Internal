@@ -26,12 +26,12 @@ Goals <span style="color:grey"> (Why do we need this?)</span>:
 * explanation <span style="color:grey"> (Why is my house worth xyz?)</span> &rarr; descriptive statistics
 * prediction <span style="color:grey"> (How much is my house worth?)</span> &rarr; inferential statistics
 
-### Regression: 
+### Regression
 
 * *regredi* (Latin) = to go back
 * "going back" from a cloud of data points to find the underlying relationship
 
-### Linear Regression:
+### Linear Regression
 
 * assuming two (or more) variables have a certain kind of relationship - **linear**
 * using this assumption to find the equation that best describes this relationship
@@ -129,7 +129,7 @@ $p$ number of features<br>
 
 ---
 ## __Exercises__ 
-## Implementation in sklearn
+### Implementation in sklearn
 
 ```python
 # Packages needed 
@@ -187,7 +187,7 @@ y_pred = lin_reg.predict(X)
 # calculate the R-squared for our model
 print(r2_score(y, y_pred))
 ```
-#### Limitations of Linear Regression
+### Limitations of Linear Regression
 * estimating the quality of the model in only one value (e.g. $R^2$) can lead to biased interpretation
 * if the errors follow certain patterns: indicates poor fit i.e. not all variance is captured in the model
 
