@@ -161,16 +161,16 @@ y = df['target_variable']
 lin_reg = LinearRegression() # instantiate
 lin_reg.fit(X, y) # train
 ```
-* Show intercept and slope/coefficient: 
+* Show intercept and slope/coefficient
 ```python
 print(lin_reg.intercept_) # intercept
 print(lin_reg.coef_[0]) # first coefficient
 ```
 * Plot data points with fitted regression line
 ```python
-# Plotting our data points
+# plotting our data points
 plt.scatter(X, y)
-# Adding the fitted regression line of our model
+# adding the fitted regression line of our model
 plt.plot(X, X*slope +intercept, '-')
 
 # plt.title()
@@ -179,12 +179,12 @@ plt.plot(X, X*slope +intercept, '-')
 ```
 * Estimate model fit with $R^2$
 ```python
-# Calculate the estimated value for each data point
+# calculate the estimated value for each data point
 y_pred = lin_reg.predict(X)
-# Note: the input for predict() needs to be a dataframe
+# note: the input for predict() needs to be a dataframe
 # single values can be passed in this form: pd.DataFrame({'col_name': [value]})
 
-# Calculate the R-squared for our model
+# calculate the R-squared for our model
 print(r2_score(y, y_pred))
 ```
 #### Limitations of Linear Regression
@@ -221,12 +221,12 @@ y_prediction = lin_reg.predict(new_y)
 ```
 * Estimate model fit with Adjusted $R^2$
 ```python
-# Define function for calculating adjusted r-squared
+# define function for calculating adjusted r-squared
 def adjusted_r_squared(r_squared, X):
     adjusted_r2 = 1 - ((1 - r_squared) * (len(X) - 1) / (len(X) - X.shape[1] - 1))
     return adjusted_r2 
 
-# Calculate adjusted r-squared to compare different models
+# calculate adjusted r-squared to compare different models
 adj_r_sq = {}
 adj_r_sq['M1'] = adjusted_r_squared(r2_score(y, y_hat), X)
 adj_r_sq['M2'] = adjusted_r_squared(r2_score(y, y_hat2), X2)
@@ -261,7 +261,7 @@ ord_make.fit_transform(df[['cat_col']])
 ```python
 # using pandas .get_dummies()
 pd.get_dummies(df['cat_col'])
-# alternative
+# alternative:
 from sklearn.preprocessing import LabelBinarizer
 lb = LabelBinarizer()
 dummies = lb.fit_transform(df['cat_col'])
