@@ -240,13 +240,13 @@ print(adj_r_sq)
 # e.g. using seaborns pairplot function
 sns.pairplot(df) 
 ```
-* declare strings as categories:
+* Declare strings as categories:
 ```python
 # string column to category
-cat_df = df['cat_col'].astype('category'
+cat_df = df['cat_col'].astype('category')
 
 ```
-* label encoding:
+* Label Encoding:
 ```python
 # converts strings into numerical labels
 cat_df.cat.codes
@@ -257,7 +257,7 @@ ord_make.fit_transform(df[['cat_col']])
 
 ```
 
-* creating dummy variables:
+* Creating Dummy Variables:
 ```python
 # using pandas .get_dummies()
 pd.get_dummies(df['cat_col'])
