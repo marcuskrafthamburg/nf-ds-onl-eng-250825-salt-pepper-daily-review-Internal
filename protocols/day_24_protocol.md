@@ -1,4 +1,4 @@
-# Day 23, 26.09.2025
+# Day 24, 26.09.2025
 
 ##  __Basic Overview__ 
 *  Today it was all about "Gradient Descent"
