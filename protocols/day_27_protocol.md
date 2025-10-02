@@ -30,7 +30,7 @@ A classification algorithm that predicts the probability of a binary outcome. Us
 **Use cases:**
 - email spam detection, sentiment analysis (sad/not sad), medical diagnosis, survive-die, admitted-rejected...
 - can be extended to **multi-class classification**
-- useful for categorical variables?
+- useful for categorical variables
 
 **🚧 Limitations**
 - avoid for non-linear / complex boundaries
@@ -51,7 +51,8 @@ A classification algorithm that predicts the probability of a binary outcome. Us
 
 <!-- ![sigmoid](../images/sigmoid.png) -->
 <!-- ![sigmoid](/images/sigmoid.png) -->
-![sigmoid](sigmoid.png)
+<img src="../images/sigmoid.png" alt="sigmoid() pic" width="500">
+<!-- ![sigmoid](sigmoid.png) -->
 
 - default threshold is 0.5
     - if h_b(x) >= 0.5 ➡ sad
