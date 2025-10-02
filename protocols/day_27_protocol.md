@@ -49,10 +49,7 @@ A classification algorithm that predicts the probability of a binary outcome. Us
 - $σ(z) = 1/(1 +  e⁻ᶻ)$
 - $z = θ₀ + θ₁x₁ + θ₂x₂ + ...$ <- make it linear optimization problem
 
-<!-- ![sigmoid](../images/sigmoid.png) -->
-<!-- ![sigmoid](/images/sigmoid.png) -->
-<img src="../images/sigmoid.png" alt="sigmoid() pic" width="500">
-<!-- ![sigmoid](sigmoid.png) -->
+![sigmoid](../images/sigmoid.png)
 
 - default threshold is 0.5
     - if h_b(x) >= 0.5 ➡ sad
@@ -72,14 +69,14 @@ A classification algorithm that predicts the probability of a binary outcome. Us
 
 - **Goal:** Minimize J(θ) to increase confidence and reduce misclassification
 $$ J(θ) = -1/m Σ [y_i log(h_θ(x_i)) + (1 - y_i) log(1 - h_θ(x_i))] $$
-![](logloss.png)
+![](../images/logloss.png)
 - probability close to 0 -> high Loss
 - probability close to 1 -> low Loss
 - **Loss** = error for a single data point
 - **Cost** = average loss across **all** data points
 
 - ⚠️ cost function must be **convex** to guarantee finding the global minimum using **gradient descent**
-![convex](convex.png)
+![convex](../images/convex.png)
 
 **Why not use MSE (Mean Squared Error)?**
 - Linear regression uses: $J(θ) = Σ(y_i - ŷ_i)²$
