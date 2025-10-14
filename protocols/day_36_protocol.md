@@ -80,8 +80,11 @@ $ min \sum L(y_i, f(x_i)) $
 * Lecture slides
     * https://ideal-adventure-6vymekm.pages.github.io/sessions/16_Ensemble_Methods_part2.html
 
-* Practical Machine Learning (2021 Fall), Stanford University
+* Boosting, Practical Machine Learning (2021 Fall), Stanford University
     * https://c.d2l.ai/stanford-cs329p/_static/pdfs/cs329p_slides_7_3.pdf
+
+* Stacking, Practical Machine Learning (2021 Fall), Stanford University
+    * https://c.d2l.ai/stanford-cs329p/_static/pdfs/cs329p_slides_7_4.pdf
 
 * ML Workflow Overview:
     * https://miro.com/app/board/uXjVJ7drVmI=/
