@@ -117,6 +117,8 @@ To prevent overfitting (they are considered hyperparameters, too)
 - Keras
 - etc.
 
+TensorFlow tool: https://discord.com/channels/1327196356191981662/1429592457208795200/1430141349230940273
+
 Note: DAG - directed acyclic graph/flowchart
 
 ##  References
