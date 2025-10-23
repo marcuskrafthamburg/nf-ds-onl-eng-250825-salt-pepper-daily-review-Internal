@@ -64,14 +64,15 @@ These decide how much “signal” each neuron passes forward - they add nonline
 - Tanh
 - ReLU (Rectified Linear unit)
 
-Playground tool: https://playground.tensorflow.org/#activation=linear&batchSize=30&dataset=spiral&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=5&networkShape=3,2&seed=0.51015&showTestData=false&discretize=false&percTrainData=70&x=true&y=true&xTimesY=true&xSquared=true&ySquared=true&cosX=false&sinX=true&cosY=false&sinY=true&collectStats=false&problem=classification&initZero=false&hideText=false
 
 ## Training the Network 
 
 ### Backpropagation 
-Makes training of very deep networks possible 
 
-<img src="https://i.sstatic.net/1214s.png" width="600">
+Makes training of very deep networks possible 
+<div style="background-color:white; padding:10px;">
+  <img src="https://i.sstatic.net/1214s.png" width="600">
+</div>
 
 In simple terms: 
 1. The network makes a prediction (feed forward)
@@ -115,18 +116,19 @@ To prevent overfitting (they are considered hyperparameters, too)
 
 - TensorFlow
 - Keras
+- PyTorch
 - etc.
 
-TensorFlow tool: https://discord.com/channels/1327196356191981662/1429592457208795200/1430141349230940273
+TensorFlow tool: https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=2,2&seed=0.48360&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false
 
 Note: DAG - directed acyclic graph/flowchart
 
 ##  References
 * Lecture slides
-https://discord.com/channels/1327196356191981662/1429592457208795200/1430137635623403520
+https://ideal-adventure-6vymekm.pages.github.io/sessions/18_Neural_Networks.html
     
 * Explainer video Neural Networks Part 1: 
-https://discord.com/channels/1327196356191981662/1429592457208795200/1429840580405362739
+https://www.youtube.com/watch?v=CqOfi41LfDw&list=PLKPJtUGFjr1v8JvbezsTl36GT3B9TvprL&index=3
 
 * Explainer video Neural Networks Part 2: 
 https://www.youtube.com/watch?v=IN2XmBhILt4&list=PLKPJtUGFjr1v8JvbezsTl36GT3B9TvprL&index=4
