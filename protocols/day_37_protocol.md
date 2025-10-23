@@ -123,8 +123,6 @@ TensorFlow tool: https://playground.tensorflow.org/#activation=tanh&batchSize=10
 
 Note: DAG - directed acyclic graph/flowchart
 
-=)
-
 ##  References
 * Lecture slides
 https://ideal-adventure-6vymekm.pages.github.io/sessions/18_Neural_Networks.html
