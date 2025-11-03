@@ -18,7 +18,7 @@ Daily Routine
 |09:00 - 10:00|Daily Review|
 |10:00 - 12:30|Group project on Python and SQL|
 |12:30 - 13:30|Lunch Break| 
-|13:30 - -----|Group project on Python and SQL|
+|13:30 - 18:00|Group project on Python and SQL|
 
 
 </span>
