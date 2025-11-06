@@ -117,35 +117,9 @@ H0  - Null hypothesis: the series **is stationary**
 How many days into the past still have a real effect on today's value?
 
 **Example**: Sleep and energy   
-
-Day t: Today's energy  
-Day t-1: Yesterday's sleep  
-Day t-2: Sleep 2 days ago   
-
-Yesterday -> lag 1  
-2 days ago -> lag 2  
-3 days ago -> lag 3  
-
-**ACF** :  
-"How much does today's energy relate to past days overall?"  
- 
-
-**PACF** :  
-"If we remove what yesterday explains,
+**ACF** :  "How much does today's energy relate to past days overall?"  
+**PACF** :  "If we remove what yesterday explains,
 does anything from 2 or 3 days ago still influence today?"  
-
-
-
-## 5. Train-Test Split  
-- Unlike other data, we can't shuffle time.  
-- To test a model, we train on the past to predict the future in order.  
-- Two ways to split the data:  
-1. **Rolling Window**: fixed-size history slides forward -> only recent data counts.  
-![TSA_CV_BlockTimeSeriesSplit](../images/TSA_crossvalidation_BTSS.png)  
-
-
-2. **Expanding Split**: training grows with time -> all histroy counts
-![TSA_CV_TimeSeriesSplit](../images/TSA_crossvalidation_TSS.png)  
 
 ### Rolling Mean - A smoothing technique
 
@@ -167,7 +141,58 @@ does anything from 2 or 3 days ago still influence today?"
 
 <video width="600" controls>
   <source src="../images/TSA_rolling_mean_exp.mp4" type="video/mp4">
-</video> 
+</video>   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Rolling mean vs ADF and KPSS tests  
+
+-> **Rolling mean** helps you see if the data's average changes over time -> Here is one clue for whether it's stationary or not.   
+
+-> The **ADF** and **KPSS** tests are **statistical ways** to check for stationarity.   
+
+-> But before testing, we often visualize the series using a rolling mean to get a quick idea.
+
+So:  
+<span style=color:yellow>Rolling Mean</span> -> quick visual check   
+<span style=color:yellow>ADF</span> -> formal statistical proof, test if the series is non-stationary   
+<span style=color:yellow>KPSS</span> -> formal statistical proof, test if the series is stationary
+
+
+
+
+
+## 5. Train-Test Split  
+- Unlike other data, we can't shuffle time.  
+- To test a model, we train on the past to predict the future in order.  
+- Two ways to split the data:  
+1. **Rolling Window**: fixed-size history slides forward -> only recent data counts.  
+![TSA_CV_BlockTimeSeriesSplit](../images/TSA_crossvalidation_BTSS.png)  
+
+
+2. **Expanding Split**: training grows with time -> all histroy counts
+![TSA_CV_TimeSeriesSplit](../images/TSA_crossvalidation_TSS.png)  
+
 
 
 
