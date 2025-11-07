@@ -1,12 +1,12 @@
 
 # Day 45, 05.11.2025 - Time Series - Continuation
-
+---
 ##  __Basic Overview__
  
 * Continuation of Time Series
 * Brief introduction to other ARMA-like models
 
-
+---
 ---
 ##  __Schedule__
 
@@ -34,7 +34,7 @@
 - **VAR:** Multivariate (vector) autoregressive model.  
 - **Time-Varying Coefficients:** Capture dynamic relationships.
 - **there are more...**
-- (you could also decompose your data, use ARMA to forecast and afterwards add removed components back in)
+- (you could also decompose your data, use ARMA to forecast and afterwards add decomposed components back in)
 
 
 ### Forecasting
@@ -113,7 +113,7 @@ sm.tsa.graphics.plot_acf()
 sm.tsa.graphics.plot_pacf()
 ~~~
 ![alt text](../images/SM_ACF_PACF_charts.png)
-> **💡 Bonus** see chart interpretation atthe end of this file
+> **💡 Bonus:** See chart interpretation at the end of this file
 
 **3. Set Seasonal Period** (s): Determine the length of the seasonal cycle (e.g., 12 for monthly data with yearly seasonality).
 
@@ -138,7 +138,32 @@ print("BIC:", results.bic)
 ## 2. Modern and Machine Learning Extensions
 - Many previous models (e.g., regression, XGBoost) can be adapted.  
 - Often, XGBoost performs very well with time features.
+- Why This Works:
+  - SARIMA handles **linear trends** and **seasonal patterns** well
+  - XGBoost captures non-linear relationships and complex patterns in the **residuals**
+  - The combination often outperforms either model alone
 
+**Simple Example:**
+~~~python
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+from xgboost import XGBRegressor
+
+# Step 1: Fit SARIMA
+sarima = SARIMAX(train_data, order=(1,1,1), seasonal_order=(1,1,1,12))
+sarima_fit = sarima.fit()
+
+# Step 2: Get SARIMA residuals
+residuals = train_data - sarima_fit.fittedvalues
+
+# Step 3: Train XGBoost on residuals
+xgb = XGBRegressor()
+xgb.fit(X_train_features, residuals)
+
+# Step 4: Make predictions
+sarima_pred = sarima_fit.forecast(steps=n)
+xgb_pred = xgb.predict(X_test_features)
+hybrid_pred = sarima_pred + xgb_pred
+~~~
 ---
 ---
 
